@@ -6,6 +6,18 @@
     color: inherit;
     text-decoration: none; }
 
+html, body {
+  overflow-x: hidden; }
+
+#page-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: -webkit-gradient(linear, left top, left bottom, from(#99769D), color-stop(30%, #5385B6));
+  background: -webkit-linear-gradient(#99769D, #5385B6 30%);
+  background: -o-linear-gradient(#99769D, #5385B6 30%);
+  background: linear-gradient(#99769D, #5385B6 30%);
+  background-attachment: fixed; }
+
 header {
   width: 100%;
   padding: 20px;
@@ -23,7 +35,8 @@ header {
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  position: fixed; }
   header #logo-container #logo {
     height: 70px; }
   header nav {
@@ -38,20 +51,126 @@ header {
       flex-direction: row; }
       header nav ul li {
         list-style: none;
-        padding: 10px 20px; }
+        padding: 10px 20px;
+        border-bottom: 1px solid transparent; }
         header nav ul li:hover {
-          border-bottom: 2px solid #5385B6; }
+          border-bottom: 2px solid #9bb8d4; }
 
-#page-container {
+section {
   min-height: 100vh;
-  min-width: 100vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#99769D), color-stop(30%, #5385B6));
-  background: -webkit-linear-gradient(#99769D, #5385B6 30%);
-  background: -o-linear-gradient(#99769D, #5385B6 30%);
-  background: linear-gradient(#99769D, #5385B6 30%); }
-  #page-container #elevation-teaser {
-    font-family: 'Advent Pro', sans-serif; }
-    #page-container #elevation-teaser #elevation-title-section h1 {
-      font-weight: 600; }
-    #page-container #elevation-teaser #elevation-title-section h3 {
-      font-weight: 400; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: 'Lato'; }
+
+#elevation-teaser {
+  font-family: 'Advent Pro', sans-serif; }
+  #elevation-teaser #elevation-teaser-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+    #elevation-teaser #elevation-teaser-content #elevation-artwork {
+      margin-right: 40px; }
+      #elevation-teaser #elevation-teaser-content #elevation-artwork img {
+        min-height: 300px;
+        height: 60vh;
+        max-height: 800px; }
+    #elevation-teaser #elevation-teaser-content #elevation-description {
+      max-width: 600px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      #elevation-teaser #elevation-teaser-content #elevation-description #elevation-title-section h1 {
+        font-weight: 600;
+        font-size: 5em;
+        margin-top: -18px; }
+      #elevation-teaser #elevation-teaser-content #elevation-description #elevation-title-section h3 {
+        font-weight: 400;
+        font-size: 3em; }
+      #elevation-teaser #elevation-teaser-content #elevation-description #elevation-countdown {
+        font-size: 2em; }
+
+#discography #discography-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  #discography #discography-content #discography-title {
+    font-size: 2em;
+    margin-bottom: 40px; }
+  #discography #discography-content #streaming-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  #discography #discography-content .player-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 20px; }
+    #discography #discography-content .player-wrapper .player-label {
+      font-size: 1.5em;
+      margin-top: 10px; }
+
+#socials {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  #socials #socials-title {
+    font-size: 2em;
+    margin-bottom: 40px; }
+  #socials #socials-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    #socials #socials-container .social-embed-container {
+      width: 350px;
+      margin: 20px; }
+
+footer {
+  font-family: 'Lato', sans-serif;
+  padding-bottom: 20px; }
+  footer #footer-content {
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    footer #footer-content img {
+      height: 20px;
+      padding: 0 10px; }
