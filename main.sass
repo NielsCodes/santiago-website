@@ -1,6 +1,13 @@
 $purple: #99769D
 $blue: #5385B6
-  
+
+$break-large: 1050px
+$break-medium: 800px 
+
+$menu-break-large: 580px
+$menu-break-medium: 450px
+$menu-break-small: 370px
+
 * 
   margin: 0
   padding: 0
@@ -30,22 +37,44 @@ header
   justify-content: space-between
   align-items: center
   position: fixed
+  z-index: 1000
+  @media screen and (max-width: $break-medium)
+    background: linear-gradient($purple, transparentize($purple, 1) 90%)
+
+  @media screen and (max-width: $menu-break-medium)
+    padding-right: 0
+
+  @media screen and (max-width: $menu-break-small)
+    padding: 20px 0
 
   #logo-container
     #logo
       height: 70px
 
+    @media screen and (max-width: $menu-break-small)
+      display: none
+
   nav 
     font-family: 'Lato', sans-serif
+
+    @media screen and (max-width: $menu-break-small)
+      width: 100vw
 
     ul 
       display: flex
       flex-direction: row 
+      width: 100%
+      justify-content: space-between
 
       li 
         list-style: none 
         padding: 10px 20px
         border-bottom: 1px solid transparent
+        user-select: none
+
+        @media screen and (max-width: $menu-break-large)
+          padding: 10px
+          font-size: .8em
 
         &:hover
           border-bottom: 2px solid lighten($blue, 20%)
@@ -59,6 +88,8 @@ section
   align-items: center 
   justify-content: center
   font-family: 'Lato'
+  padding: 0 40px
+  box-sizing: border-box
 
 #elevation-teaser
   font-family: 'Advent Pro', sans-serif
@@ -66,20 +97,33 @@ section
   #elevation-teaser-content
     display: flex
     flex-direction: row
+    @media screen and (max-width: $break-large)
+      flex-direction: column
+      padding-top: 120px
 
     #elevation-artwork 
       margin-right: 40px
+      @media screen and (max-width: $break-large)
+        margin-right: 0
+        margin-bottom: 40px
+        display: flex
+        justify-content: center
+        align-items: center
 
       img
-        min-height: 300px
-        height: 60vh
-        max-height: 800px
+        min-width: 300px
+        width: 60vh
+        max-width: 90vw
+        // max-width: 90vw
 
     #elevation-description
       max-width: 600px
       display: flex 
       flex-direction: column
       justify-content: space-between
+      
+      @media screen and (max-width: $break-medium)
+        align-items: center
 
       #elevation-title-section 
         h1
@@ -91,15 +135,24 @@ section
           font-weight: 400
           font-size: 3em
 
+        @media screen and (max-width: $break-medium)
+          text-align: center
+
+      #elevation-description-text
+        padding: 20px 0
+
       #elevation-countdown
         font-size: 2em
 
 #discography
+  @media screen and (max-width: $break-large)
+    padding-top: 80px !important
 
   #discography-content
     display: flex 
     flex-direction: column
     align-items: center
+    // text-align: center
 
     #discography-title
       font-size: 2em
@@ -107,6 +160,9 @@ section
 
     #streaming-container
       display: flex
+      flex-direction: row
+      @media screen and (max-width: $break-medium)
+        flex-direction: column
 
     .player-wrapper
       display: flex
@@ -117,10 +173,16 @@ section
       .player-label
         font-size: 1.5em
         margin-top: 10px
+
+      &#player-youtube
+        @media screen and (max-width: $break-large)
+          display: none
     
 // #socials   
 #socials
   flex-direction: column
+  @media screen and (max-width: $break-large)
+    padding-top: 80px
 
   #socials-title
     font-size: 2em
@@ -128,12 +190,18 @@ section
 
   #socials-container
     display: flex
-    // width: 60vw
-    // justify-content: space-around
+    @media screen and (max-width: $break-medium)
+      flex-direction: column
+      align-items: center
+      justify-content: center
 
     .social-embed-container
       width: 350px 
       margin: 20px
+      @media screen and (max-width: $break-medium)
+        // width: 90vw
+        // display: flex
+        // justify-content: center
 
 footer
   font-family: 'Lato', sans-serif
