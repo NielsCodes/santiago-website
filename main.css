@@ -54,7 +54,8 @@ header {
         padding: 10px 20px;
         border-bottom: 1px solid transparent; }
         header nav ul li:hover {
-          border-bottom: 2px solid #9bb8d4; }
+          border-bottom: 2px solid #9bb8d4;
+          cursor: pointer; }
 
 section {
   min-height: 100vh;
